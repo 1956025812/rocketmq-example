@@ -1,0 +1,16 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /consumer
+
+spring:
+  application:
+    name: consumer
+
+mq:
+  consumer:
+    open: true
+    groupName: ${spring.application.name}
+    namesrvAddr: 120.24.59.39:9876
+    topic: ${spring.application.name}
+    subscribeTopics: producer

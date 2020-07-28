@@ -1,0 +1,18 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /producer
+
+spring:
+  application:
+    name: producer
+
+
+mq:
+  producer:
+    open: true
+    groupName: ${spring.application.name}
+    namesrvAddr: 120.24.59.39:9876
+    topic: ${spring.application.name}
+
+
